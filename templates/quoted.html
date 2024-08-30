@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h2>
+            The current price of {{ prices['symbol'] }} stock is:
+        </h2>
+    </div>
+
+    <div class="mb-3">
+        <h1>{{ prices['symbol'] }} - {{ prices['price'] | usd }}</h1>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h2>{{ username }}'s History!</h2>
+
+    </div>
+
+    <div class="mb-3">
+        <table>
+            <tr>
+                <th>Transaction</th>
+                <th>Stock</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction['transaction_type'] }}</td>
+                    <td>{{ transaction['symbol'] }}</td>
+                    <td>{{ transaction['shares'] }}</td>
+                    <td>{{ transaction['price'] }}</td>
+                    <td>{{ transaction['time'] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

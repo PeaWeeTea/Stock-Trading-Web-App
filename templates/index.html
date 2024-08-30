@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h2>Hi {{ username }}!</h2>
+
+    </div>
+
+    <div class="mb-3">
+        <table>
+            <tr>
+                <th>Stock</th>
+                <th>Shares</th>
+                <th>Stock Price</th>
+                <th>Holding Value</th>
+            </tr>
+            {% for holding in holdings %}
+                <tr>
+                    <td>{{ holding['symbol'] }}</td>
+                    <td>{{ holding['shares'] }}</td>
+                    <td>{{ holding['stock_price'] }}</td>
+                    <td>{{ holding['holding_value'] }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="2"></td>
+                <th>Cash</th>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <th>TOTAL</th>
+                <td>{{ total_worth }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

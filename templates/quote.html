@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <h1>
+                Enter a stock's symbol for a quote:
+            </h1>
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="(NFLX)" type="text">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Confirm</button>
+        </div>
+    </form>
+{% endblock %}

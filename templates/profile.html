@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h1>
+            {{ username }}'s Profile
+        </h1>
+    </div>
+    <br><br>
+
+    <form action="/change_password" method="post">
+        <div class="mb-3">
+            <h2>
+                Password Change
+            </h2>
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_password" placeholder="New Password" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Change Password</button>
+    </form>
+
+{% endblock %}
